@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <mainClass>EdgarAgent</mainClass>
+    <corpusPath>corpora/edgar/edgar.txt</corpusPath>
+    <indexPath>resources/whooshIndexes/edgar</indexPath>
+    <threshold>0.35</threshold>
+    <useWhoosh>true</useWhoosh>
+    <stopwords>resources/stopwords/edgar_stop.txt</stopwords>
+</config>

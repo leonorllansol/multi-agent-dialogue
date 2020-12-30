@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <mainClass>LevenshteinAgent</mainClass>
+    <agentAmount>1</agentAmount>
+    <useWhoosh>true</useWhoosh>
+    <variedParameters>questionSimValue,answerSimValue</variedParameters>
+
+    <questionSimValue>0.5</questionSimValue>
+    <answerSimValue>0.5</answerSimValue>
+</config>
