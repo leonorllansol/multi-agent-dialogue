@@ -29,14 +29,14 @@ This process is accomplished through the use of four modules:
   - `>>> import nltk`
   - `>>> nltk.download('wordnet')`
   - `>>> nltk.download('omw')`
-  - Finally, to run the program, execute the command `python3 boss.py`. The program will prompt you with "Diga algo: ", after which you can type your query.
+  - Finally, to run the program, execute the command `python3 dialogueManager.py`. The program will prompt you with "Diga algo: ", after which you can type your query.
   - When you desire to end the interaction, type `exit`.
   
   The following figure shows a high level architecture of the system: 
   
   ![Architecture](https://github.com/leonorllansol/chatuga-sss/blob/master/images/highLevelArchi.jpg)
   
-  When the user poses a query to the **Boss**, the query is sent to the AgentHandler, who forwards it to every **agent**. Each agent returns a list with one or more answers. The set of answers returned by all agents is passed to each **decision making strategy**, which chooses one to return to the **Boss**, based on its heuristic. The Boss receives the set of answers returned by all strategies, and chooses one to return to the user based on its confidence on each strategy.
+  When the user poses a query to the **Dialogue Manager**, the query is sent to the AgentHandler, who forwards it to every **agent**. Each agent returns a list with one or more answers. The set of answers returned by all agents is passed to each **decision making strategy**, which chooses one to return to the **Boss**, based on its heuristic. The Dialogue Manager receives the set of answers returned by all strategies, and chooses one to return to the user based on its confidence on each strategy.
   
 ## Agents
   - Each agent receives the user query and returns a list of answers, with one or more answers. The number of answers to be returned by each agent is defined in the configuration file `config/config.xml` - `<answerAmount>`.
@@ -152,7 +152,7 @@ That said, the following indications must be followed when creating a new agent:
             └── SimpleQA.py
   
 ## Decision Making Strategies
-  - Each strategy receives the set of answers given by all agents, in the form {agent1: [answer1, ... answerN], ..., agentN: [answer1, ... answerN]}, and returns one to the Boss, according to its heuristic.
+  - Each strategy receives the set of answers given by all agents, in the form {agent1: [answer1, ... answerN], ..., agentN: [answer1, ... answerN]}, and returns one to the Dialogue Manager, according to its heuristic.
   - The available Decision Making Strategies are:
   	- Simple Majority - chooses more frequent answer
 	- Priority System - chooses the answer of the agent with highest priority
@@ -162,7 +162,7 @@ That said, the following indications must be followed when creating a new agent:
 	- Query Agent - chooses the answer of the agent whose domain is the same as the query domain
 	- Answers Impersonal - chooses an answer classified as impersonal
 	- Query Answer - chooses the answer that is closer to the question
-  - Each strategy has a weight associated, which is used by the Boss to choose the final answer to be returned to the user. It can be changed in the `config/config.xml`.
+  - Each strategy has a weight associated, which is used by the Dialogue Manager to choose the final answer to be returned to the user. It can be changed in the `config/config.xml`.
 	
 ### Adding a new Decision Making Strategy:
   - Given a set of answers, a Decision Making Strategy chooses one of them, according to its heuristics. For example, SimpleMajority chooses the most given answer, and YesNoStrategy chooses an answer which contains "yes" or "no".
