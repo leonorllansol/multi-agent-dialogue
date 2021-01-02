@@ -35,7 +35,7 @@ This process is accomplished through the use of four modules:
   
   The following figure shows a high level architecture of the system: 
   
-  ![Architecture](https://github.com/leonorllansol/multi-agent-dialogue/chatuga-sss/images/UnbotableAbstractAgents.jpg)
+  ![Architecture](https://github.com/leonorllansol/multi-agent-dialogue/blob/main/chatuga-sss/images/UnbotableAbstractAgents.jpg)
   
   When the user poses a query to the **Dialogue Manager**, the query is sent to the AgentHandler, who forwards it to every **agent**. Each agent returns a list with one or more answers. The set of answers returned by all agents is passed to each **decision making strategy**, which chooses one to return to the **Boss**, based on its heuristic. The Dialogue Manager receives the set of answers returned by all strategies, and chooses one to return to the user based on its confidence on each strategy.
   
