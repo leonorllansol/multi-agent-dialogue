@@ -21,6 +21,7 @@ This process is accomplished through the use of four modules:
 ## Getting started
   ### Requirements: 
   - Python3 
+  - download fine-tuned model with tailored distractors from https://drive.google.com/file/d/1DuuqteqKZzgej77Ay_4a0Y14n0LKabqP/view?usp=sharing
   - The two following commands will install all the requirements for this project
   - `pip install requirements.txt` 
   - `python3 -m spacy download pt_core_news_sm`
